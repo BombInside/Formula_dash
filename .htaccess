@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond $1 !^(index\.php|css/site_style\.css|public)
+RewriteCond %{REQUEST_URI} !\.(css|js|jpg|gif|png)$
+RewriteRule ^(.*)$ index.php?/$1 [L,QSA] 
+</IfModule>
